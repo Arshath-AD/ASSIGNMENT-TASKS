@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Tasks</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+input, textarea {
+    padding: 10px;
+    margin: 5px;
+    width: 80%;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background: white;
+    margin: 5px auto;
+    padding: 10px;
+    width: 80%;
+    max-width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+li button {
+    background-color: #dc3545;
+}
+
+li button:hover {
+    background-color: #a71d2a;
+}
+
+    </style>
+</head>
+<body>
+    
+    <!-- Task 1: Change Background Color -->
+    <button onclick="changeBackgroundColor()">Change Background Color</button>
+    <br><br>
+    
+    <!-- Task 2: Count Button Clicks -->
+    <button onclick="increaseCount()">Click Me</button>
+    <p id="clickCount">Button Clicked: 0 times</p>
+    
+    <!-- Task 3: Show & Hide Password -->
+    <input type="password" id="password" placeholder="Enter Password">
+    <button onclick="togglePassword()" id="toggleBtn">Show</button>
+    <br><br>
+    
+    <!-- Task 4: Dynamic List -->
+    <input type="text" id="itemInput" placeholder="Enter an item">
+    <button onclick="addItem()">Add Item</button>
+    <ul id="itemList"></ul>
+    <br>
+    
+    <!-- Task 5: Real-Time Character Counter -->
+    <textarea id="textArea" placeholder="Type something..." oninput="updateCharCount()"></textarea>
+    <p id="charCount">Characters: 0</p>
+    
+    <script>
+        // Task 1: Change Background Color
+        function changeBackgroundColor() {
+            const randomColor = `#${Math.floor(Math.random()*16777215).toString(16)}`;
+            document.body.style.backgroundColor = randomColor;
+        }
+
+        // Task 2: Count Button Clicks
+        let count = 0;
+        function increaseCount() {
+            count++;
+            document.getElementById('clickCount').textContent = `Button Clicked: ${count} times`;
+        }
+
+        // Task 3: Show & Hide Password
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const toggleBtn = document.getElementById('toggleBtn');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleBtn.textContent = 'Hide';
+            } else {
+                passwordInput.type = 'password';
+                toggleBtn.textContent = 'Show';
+            }
+        }
+
+        // Task 4: Dynamic List
+        function addItem() {
+            const input = document.getElementById('itemInput');
+            if (input.value.trim() === '') return;
+            const li = document.createElement('li');
+            li.textContent = input.value;
+            const removeBtn = document.createElement('button');
+            removeBtn.textContent = 'Remove';
+            removeBtn.onclick = () => li.remove();
+            li.appendChild(removeBtn);
+            document.getElementById('itemList').appendChild(li);
+            input.value = '';
+        }
+
+        // Task 5: Real-Time Character Counter
+        function updateCharCount() {
+            const textLength = document.getElementById('textArea').value.length;
+            document.getElementById('charCount').textContent = `Characters: ${textLength}`;
+        }
+    </script>
+    
+</body>
+</html>
