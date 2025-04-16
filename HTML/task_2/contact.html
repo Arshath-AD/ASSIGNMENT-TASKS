@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - My Travel Blog</title>
+    <style>
+        nav { padding: 10px; background-color: #333; color: white; }
+        nav a { color: white; margin: 0 10px; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="Itinerary.html">Itinerary</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <h1>Contact Me</h1>
+    <form action="#" method="POST">
+        <label for="name">Your Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="email">Your Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" required></textarea><br><br>
+        <label for="reason">Reason for Contact:</label><br>
+        <select id="reason" name="reason">
+            <option value="inquiry">Inquiry</option>
+            <option value="collaboration">Collaboration</option>
+        </select><br><br>
+        <input type="checkbox" name="newsletter" id="newsletter"> Subscribe to newsletter<br><br>
+        <input type="submit" value="Send Message">
+    </form>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration - TechFest 2025</title>
+    <style>
+        nav { padding: 10px; background-color: #333; color: white; }
+        nav a { color: white; margin: 0 10px; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="registration.html">Registration</a>
+        <a href="gallery.html">Gallery</a>
+    </nav>
+
+    <h1>Registration Form</h1>
+    <form>
+        <label for="name">Name:</label><input type="text" id="name" name="name"><br>
+        <label for="email">Email:</label><input type="email" id="email" name="email"><br>
+        <label for="phone">Phone:</label><input type="tel" id="phone" name="phone"><br>
+        <label for="category">Participation Category:</label>
+        <select id="category" name="category">
+            <option value="speaker">Speaker</option>
+            <option value="attendee">Attendee</option>
+            <option value="volunteer">Volunteer</option>
+        </select><br>
+        <label>Payment Method:</label>
+        <input type="radio" name="payment" value="card"> Card
+        <input type="radio" name="payment" value="cod"> Cash on Delivery<br>
+        <input type="checkbox" name="terms" required> I agree to the terms<br>
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>

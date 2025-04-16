@@ -1,0 +1,26 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.navbar {
+    background-color: #343a40;
+}
+
+.navbar .nav-link {
+    color: #fff;
+}
+
+.navbar .nav-link:hover {
+    color: #f8f9fa;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #007bff;
+}
+
+h4 {
+    color: #007bff;
+}
